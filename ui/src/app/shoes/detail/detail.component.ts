@@ -10,7 +10,7 @@ import { Http } from '@angular/http';
 export class DetailComponent implements OnInit {
 
   constructor(private route:ActivatedRoute, private http:Http) { }
-  shoe = {};
+  shoe = {} as any;
   ngOnInit() {
     this.route.params.subscribe(params=>{
       this.http.get('api/shoes/'+params.shoeId)
