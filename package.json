@@ -1,0 +1,17 @@
+{
+  "name": "seo-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gus Crawford <gus.crawford@envisageny.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "pm2": "^2.10.4"
+  },
+  "scripts": {
+    "start":"yarn run api && yarn run ng-serve",
+    "stop":"pm2 kill",
+    "install": "cd api && yarn install && cd ../ui && yarn install",
+    "api":"cd api && pm2 start bin/www --name \"api\" --watch",
+    "ng-serve":"pm2 start ng-serve-ui.js"
+  }
+}
