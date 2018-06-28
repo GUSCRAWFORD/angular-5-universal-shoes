@@ -1,0 +1,6 @@
+<h2>Shoe Catalog</h2>
+<ol>
+  <li *ngFor="let shoe of shoes">
+    <a [routerLink]="['/shoes/detail/',shoe.id]">{{shoe.color}} {{shoe.model}} {{shoe.make}}</a>
+  </li>
+</ol>
