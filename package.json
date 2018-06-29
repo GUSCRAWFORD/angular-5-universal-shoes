@@ -8,10 +8,12 @@
     "pm2": "^2.10.4"
   },
   "scripts": {
-    "start": "yarn run api && yarn run ng-serve",
+    "start": "yarn run api && yarn run ng-serve-ui && yarn run xpr-serve-ssr",
     "stop": "pm2 kill",
     "install": "cd api && yarn install && cd ../ui && yarn install",
+
     "api": "cd api && pm2 start bin/www --name \"api\" --watch",
-    "ng-serve": "pm2 start ng-serve-ui.js"
+    "ng-serve-ui": "pm2 start ng-serve-ui.js",
+    "xpr-serve-ssr":"cd ui && pm2 start --name \"xpr-serve-ssr\" npm -- start"
   }
 }

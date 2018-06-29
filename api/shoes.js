@@ -1,4 +1,5 @@
-[
+// I think we'd need to add a resolver? (node requires .json as below) for webpacking the server entry
+module.exports = [
     {
         "id":"baj1",
         "make":"Jordan",

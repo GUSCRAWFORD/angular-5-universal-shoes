@@ -12,7 +12,7 @@ export class CatalogComponent implements OnInit {
   shoes: any[];
 
   ngOnInit() {
-    this.http.get('api/shoes')
+    this.http.get('http://localhost:4000/api/shoes')
       .subscribe(shoes=>(this.shoes as any) = shoes.json())
   }
 

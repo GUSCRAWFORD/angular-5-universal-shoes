@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
   shoe = {} as any;
   ngOnInit() {
     this.route.params.subscribe(params=>{
-      this.http.get('api/shoes/'+params.shoeId)
+      this.http.get('http://localhost:4000/api/shoes/'+params.shoeId)
       .subscribe(shoe=>{
         var shoeObj = shoe.json();
         this.shoe = shoeObj;
