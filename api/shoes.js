@@ -5,6 +5,11 @@ module.exports = [
         "make":"Jordan",
         "model":"Air",
         "color":"Blue",
+        "keywords":[
+            "shoe",
+            "jordan",
+            "basketball"
+        ],
         "image":"https://www.flightclub.com/media/catalog/product/0/1/012597_1.jpg"
     },
     {
@@ -12,6 +17,23 @@ module.exports = [
         "make":"Jordan",
         "model":"Air",
         "color":"Red",
+        "keywords":[
+            "shoe",
+            "jordan",
+            "basketball"
+        ],
         "image":"https://4app.kicksonfire.com/kofapp/upload/events_master_images/thumb_ipad_a26ccb789dc8d44d3bd7820929f1bc835a66b5fef082e.jpg"
+    },
+    {
+        "id":"gaj1",
+        "make":"Jordan",
+        "model":"Air",
+        "color":"Gold",
+        "keywords":[
+            "shoe",
+            "jordan",
+            "basketball"
+        ],
+        "image":"https://sneakernews.com/wp-content/uploads/2017/02/stadium-goods-best-selling-air-jordans-february-2017-04.jpg"
     }
 ]
