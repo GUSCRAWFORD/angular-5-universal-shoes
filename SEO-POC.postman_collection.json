@@ -6,6 +6,54 @@
 	},
 	"item": [
 		{
+			"name": "SEO",
+			"description": "",
+			"item": [
+				{
+					"name": "Sitemap",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/api/sitemap",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"sitemap"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "URL Output Sample",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:4000/shoes/detail/baj1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"shoes",
+								"detail",
+								"baj1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Query Shoes",
 			"request": {
 				"method": "GET",
@@ -31,13 +79,15 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/shoes/baj1",
+					"raw": "localhost:3000/api/shoes/detail/baj1",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
+						"api",
 						"shoes",
+						"detail",
 						"baj1"
 					]
 				}

@@ -18,7 +18,8 @@
 </urlset>
 https://www.sitemaps.org/protocol.html
 */
-const js2xmlparser = require('js2xmlparser');
+const js2xmlparser = require('js2xmlparser'),
+    SEO_ENDPOINT = "http://localhost:4000";
 
 var express = require('express');
 var router = express.Router();
@@ -32,7 +33,7 @@ router.get('/', function(req, res, next) {
             {
                 url:shoes.map(shoe=>{
                     return {
-                                "loc":req.get('host')+'/shoes/detail'+shoe.id,
+                                "loc":SEO_ENDPOINT+'/shoes/detail/'+shoe.id,
                                 "lastmod":formattedDate,
                                 "changefreq":"weekly",
                                 "priority":1.0
