@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { HttpModule } from '@angular/http';
+
+import { isPlatformBrowser } from '@angular/common';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -16,7 +18,7 @@ const APP_ROUTES : Routes = [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'seo-poc' }),
     RouterModule,
     HttpModule,
     SharedModule.forRoot(),
@@ -25,4 +27,13 @@ const APP_ROUTES : Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(APP_ID) private appId: string) {
+    const platform = isPlatformBrowser(platformId) ?
+      'in the browser' : 'on the server';
+    console.log(`Running ${platform} with appId=${appId}`);
+  }
+}
