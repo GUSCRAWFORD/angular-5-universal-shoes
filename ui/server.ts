@@ -7,13 +7,18 @@ import { enableProdMode } from '@angular/core';
  
 import * as express from 'express';
 import { join } from 'path';
- 
+const API = 'localhost:3000';
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 const url = require('url');
 const proxy = require('express-http-proxy');
-const apiProxy = proxy('localhost:3000/', {
-    forwardPath: req => url.parse(req.baseUrl).path
+const apiProxy = proxy(API, {
+    proxyReqPathResolver: req => {
+        //console.log(req.headers);
+        var forwardTo = url.parse(req.baseUrl).path;
+        console.log(forwardTo)
+        return forwardTo;
+    }
 });
 // Express server
 const app = express();

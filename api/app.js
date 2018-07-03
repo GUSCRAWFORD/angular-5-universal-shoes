@@ -7,6 +7,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var shoesRouter = require('./routes/shoes');
+var sitemapRouter = require('./routes/sitemap');
 
 var app = express();
 
@@ -21,7 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/shoes', shoesRouter);
+app.use('/api/shoes', shoesRouter);
+app.use('/api/sitemap', sitemapRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
