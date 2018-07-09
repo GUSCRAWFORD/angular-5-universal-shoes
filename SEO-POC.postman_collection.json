@@ -16,13 +16,11 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "localhost:3000/api/sitemap",
+							"raw": "{{API}}/sitemap",
 							"host": [
-								"localhost"
+								"{{API}}"
 							],
-							"port": "3000",
 							"path": [
-								"api",
 								"sitemap"
 							]
 						}
@@ -36,12 +34,10 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:4000/shoes/detail/baj1",
-							"protocol": "http",
+							"raw": "{{XPR_SSR}}/shoes/detail/baj1",
 							"host": [
-								"localhost"
+								"{{XPR_SSR}}"
 							],
-							"port": "4000",
 							"path": [
 								"shoes",
 								"detail",
@@ -60,11 +56,10 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/shoes",
+					"raw": "{{API}}/shoes",
 					"host": [
-						"localhost"
+						"{{API}}"
 					],
-					"port": "3000",
 					"path": [
 						"shoes"
 					]
@@ -79,15 +74,12 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "localhost:3000/api/shoes/detail/baj1",
+					"raw": "{{PROXY_API}}/shoes/baj1",
 					"host": [
-						"localhost"
+						"{{PROXY_API}}"
 					],
-					"port": "3000",
 					"path": [
-						"api",
 						"shoes",
-						"detail",
 						"baj1"
 					]
 				}

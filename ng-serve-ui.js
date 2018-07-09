@@ -1,3 +1,3 @@
 require('./env-task')
     .cd('ui')
-    .shell('ng serve --proxy-config proxy.conf.json');
+    .shell('ng serve --proxy-config proxy.conf.json --port 50002');

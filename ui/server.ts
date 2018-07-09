@@ -7,7 +7,7 @@ import { enableProdMode } from '@angular/core';
  
 import * as express from 'express';
 import { join } from 'path';
-const API = 'localhost:3000';
+const API = 'localhost:50000';
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 const url = require('url');
@@ -17,13 +17,19 @@ const apiProxy = proxy(API, {
         //console.log(req.headers);
         var forwardTo = url.parse(req.baseUrl).path;
         console.log(forwardTo)
-        return forwardTo;
-    }
+        return forwardTo.replace(/\/api/g,'');
+    },
+    //proxyReqPathResolver: req=>url.parse(req.baseUrl).path,
+    //target:API,
+    // changeOrigin:true,
+    // pathRewrite:{
+    //   "^/api/*": ""
+    // }
 });
 // Express server
 const app = express();
  
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 50001;
 const DIST_FOLDER = join(process.cwd(), 'dist');
  
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
